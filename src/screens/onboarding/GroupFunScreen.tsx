@@ -30,7 +30,7 @@ function GroupCard() {
   return (
     // Replace with: source={require('../../assets/onboarding_group.jpg')}
     <ImageBackground
-      source={{ uri: 'https://via.placeholder.com/600x420/4a7c59/4a7c59' }}
+      source={require(`../../assets/images/friends.jpg`)}
       style={styles.image}
       imageStyle={styles.imageInner}
       resizeMode="cover"

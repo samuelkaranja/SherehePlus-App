@@ -7,7 +7,7 @@ import {
   SafeAreaView,
   StatusBar,
 } from 'react-native';
-import { Ticket } from 'lucide-react-native';
+import { PartyPopper } from 'lucide-react-native';
 import PrimaryButton from '../../components/PrimaryButton';
 import PageDots from '../../components/PageDots';
 import { Colors, Radius, Spacing } from '../../constants/theme';
@@ -27,44 +27,50 @@ export default function SplashScreen({ onGetStarted }: Props) {
 
       {/* Replace with: source={require('../../assets/splash_bg.jpg')} */}
       <ImageBackground
-        source={{ uri: 'https://via.placeholder.com/390x844/1a1a1a/1a1a1a' }}
+        source={require(`../../assets/images/sherehe.jpeg`)}
         style={styles.bg}
         resizeMode="cover"
       >
         <View style={styles.scrim} />
 
         <SafeAreaView style={styles.safe}>
-          <View style={styles.inner}>
-            {/* Wordmark */}
-            <View style={styles.brandRow}>
-              <View style={styles.iconBox}>
-                <Ticket size={28} color={Colors.white} strokeWidth={2} />
-              </View>
-              <View style={styles.wordmarkRow}>
-                <Text style={styles.wordmark}>Sherehe</Text>
-                <Text style={styles.wordmarkPlus}>+</Text>
-              </View>
-            </View>
+  <View style={styles.inner}>
 
-            <View style={{ flex: 1 }} />
+    {/* Top spacer */}
+    <View style={{ flex: 1 }} />
 
-            {/* Bottom copy */}
-            <View style={styles.bottomBlock}>
-              <Text style={styles.eyebrow}>LIPA MDOGO MDOGO</Text>
-              <Text style={styles.headline}>
-                Experience the{'\n'}
-                <Text style={styles.headlineBold}>Best </Text>
-                <Text style={styles.headlineAccent}>of Kenya</Text>
-              </Text>
-              <PrimaryButton
-                label="Get Started"
-                onPress={onGetStarted}
-                style={styles.cta}
-              />
-              <PageDots total={3} current={0} light />
-            </View>
-          </View>
-        </SafeAreaView>
+    {/* ── Wordmark — centered ── */}
+    <View style={styles.brandRow}>
+      <View style={styles.iconBox}>
+        <PartyPopper size={38} color={Colors.white} strokeWidth={2} />
+      </View>
+      <View style={styles.wordmarkRow}>
+        <Text style={styles.wordmark}>Sherehe</Text>
+        <Text style={styles.wordmarkPlus}>+</Text>
+      </View>
+    </View>
+
+    {/* Bottom spacer — equal to top, keeps brand centered */}
+    <View style={{ flex: 1 }} />
+
+    {/* ── Bottom copy — pinned to bottom ── */}
+    <View style={styles.bottomBlock}>
+      <Text style={styles.eyebrow}>LIPA MDOGO MDOGO</Text>
+      <Text style={styles.headline}>
+        Experience the{'\n'}
+        <Text style={styles.headlineBold}>Best </Text>
+        <Text style={styles.headlineAccent}>of Kenya</Text>
+      </Text>
+      <PrimaryButton
+        label="Get Started"
+        onPress={onGetStarted}
+        style={styles.cta}
+      />
+      <PageDots total={3} current={0} light />
+    </View>
+
+  </View>
+</SafeAreaView>
       </ImageBackground>
     </View>
   );
@@ -94,10 +100,11 @@ const styles = StyleSheet.create({
   brandRow: {
     alignItems: 'center',
     gap: Spacing.sm,
+    paddingTop: 40,
   },
   iconBox: {
-    width: 68,
-    height: 68,
+    width: 75,
+    height: 75,
     borderRadius: Radius.md,
     backgroundColor: 'rgba(255,255,255,0.15)',
     alignItems: 'center',
@@ -110,14 +117,14 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   wordmark: {
-    fontSize: 36,
+    fontSize: 56,
     fontWeight: '800',
     fontStyle: 'italic',
     color: Colors.white,
     letterSpacing: -0.5,
   },
   wordmarkPlus: {
-    fontSize: 36,
+    fontSize: 56,
     fontWeight: '800',
     fontStyle: 'italic',
     color: Colors.primary,

@@ -3,6 +3,8 @@ import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 
 export type RootStackParamList = {
   Onboarding: undefined;
+  SignUp: undefined;
+  Login: undefined;
   App: undefined;
 };
 
@@ -13,7 +15,6 @@ export type AppTabParamList = {
   Profile: undefined;
 };
 
-// Convenience screen prop types
 export type RootStackScreenProps<T extends keyof RootStackParamList> =
   NativeStackScreenProps<RootStackParamList, T>;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, ImageBackground } from 'react-native';
-import { Ticket } from 'lucide-react-native';
+import { PartyPopper } from 'lucide-react-native';
 import OnboardingSlide from '../../components/OnboardingSlide';
 import { Colors, Radius } from '../../constants/theme';
 
@@ -29,14 +29,14 @@ function IllustrationCard() {
   return (
     // Replace with: source={require('../../assets/onboarding_discover.jpg')}
     <ImageBackground
-      source={{ uri: 'https://via.placeholder.com/600x420/C94B1E/C94B1E' }}
+      source={require(`../../assets/images/events.jpg`)}
       style={styles.image}
       imageStyle={styles.imageInner}
       resizeMode="cover"
     >
       <View style={styles.tint} />
       <View style={styles.badge}>
-        <Ticket size={20} color={Colors.white} strokeWidth={2} />
+        <PartyPopper size={20} color={Colors.white} strokeWidth={2} />
       </View>
     </ImageBackground>
   );
